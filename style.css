@@ -1,37 +1,51 @@
-*{
+/* Global Reset */
+* {
     margin: 0;
     padding: 0;
 }
-body{
+
+/* Body Styling */
+body {
     background-color: #280004;
     text-align: center;
+    font-family: Arial, sans-serif;
 }
-header{
+
+/* Header Styling */
+header {
     background-color: #F0FFCE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    position: relative;
     height: 5vmin;
 }
-#logo{
+
+/* Logo Styling */
+#logo {
     height: 3vmin;
     display: flex;
     align-items: center;
-    margin-left: 1.5vmin;
     position: absolute;
     left: 1rem;
-    top: 2%;
+    top: 50%;
     transform: translateY(-50%);
     font-size: 1.5rem;
+    color: #280004;
     cursor: pointer;
-    
-
 }
-.container{
+
+/* Game Container */
+.container {
     height: 70vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
-.game{
+
+.game {
     height: 60vmin;
     width: 60vmin;
     display: flex;
@@ -39,43 +53,61 @@ header{
     justify-content: center;
     align-items: center;
     gap: 1.5vmin;
-
 }
-.box{
+
+/* Game Box Styling */
+.box {
     height: 18vmin;
     width: 18vmin;
     border-radius: 1rem;
     border: none;
-    box-shadow: 0 0 1rem rgba(0,0,0,0.3);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
     font-size: 8vmin;
     color: #b0413e;
     background-color: #F0FFCE;
     cursor: pointer;
 }
-#reset-button{
+
+/* Reset Button */
+#reset-button {
     padding: 1rem;
     font-size: 1.25rem;
-    background-color:#be211b;
+    background-color: #be211b;
     color: white;
     border-radius: 1rem;
     border: none;
     cursor: pointer;
- 
+    transition: background-color 0.3s ease;
 }
-#new-btn{
+
+#reset-button:hover {
+    background-color: green;
+    color: white;
+}
+
+/* New Game Button */
+#new-btn {
     padding: 1rem;
     font-size: 1.25rem;
-    background-color:green;
+    background-color: green;
     color: white;
     border-radius: 1rem;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
-#msg{
+
+#new-btn:hover {
+    background-color: rgb(0, 100, 0);
+}
+
+/* Message Styling */
+#msg {
     color: #ffffc7;
     font-size: 5vmin;
 }
-.msg-container{
+
+.msg-container {
     height: 100vmin;
     display: flex;
     justify-content: center;
@@ -83,10 +115,13 @@ header{
     flex-direction: column;
     gap: 4rem;
 }
-.hide{
+
+.hide {
     display: none;
 }
-footer{
+
+/* Footer Styling */
+footer {
     height: 100px;
     gap: 2rem;
     padding-bottom: 10rem;
@@ -96,19 +131,56 @@ footer{
     justify-content: center;
     align-items: center;
 }
-#footer-info{
+
+#footer-info {
     background-color: #F0FFCE;
-    justify-content: left;
     border-radius: 1rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding: 0.5rem 2rem;
     color: #280004;
-    
 }
-#reset-button:hover{
-    background-color:green;
-    color: white;
+
+/* Responsive Design */
+
+/* Medium screens */
+@media (max-width: 768px) {
+    #logo {
+        font-size: 1.25rem;
+    }
+
+    .box {
+        height: 15vmin;
+        width: 15vmin;
+        font-size: 6vmin;
+    }
+
+    #reset-button, #new-btn {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
 }
-#new-btn:hover{
-    background-color: rgb(0, 100, 0);
+
+/* Small screens */
+@media (max-width: 480px) {
+    #logo {
+        font-size: 1rem;
+    }
+
+    .box {
+        height: 12vmin;
+        width: 12vmin;
+        font-size: 5vmin;
+    }
+
+    #reset-button, #new-btn {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
+
+    #msg {
+        font-size: 4vmin;
+    }
 }
