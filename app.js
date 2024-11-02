@@ -10,6 +10,9 @@ let msg = document.querySelector("#msg");
 
 let turnO = true; //playerX , playerO
 
+let clickCount = 0;
+
+//Winner Pattern
 
 const winPatterns = [
     [0,1,2],
@@ -22,8 +25,11 @@ const winPatterns = [
     [6,7,8],
 ];
 
+//Reset Game
+
 const resetGame = () => {
     turnO = true;
+    clickCount = 0;
     enableBoxes();
     msgContainer.classList.add("hide");
 }
@@ -41,15 +47,20 @@ boxes.forEach((box) => {
             turnO = true;
         }
         box.disabled = true;
+        clickCount++;
         checkWinner ();
     });
 });
+
+//Disabling Boxes
 
 const disableBoxes = () => {
     for(let box of boxes ){
         box.disabled = true ;
     }
 };
+
+//Enabling Boxes
 
 const enableBoxes = () => {
     for(let box of boxes ){
@@ -65,6 +76,14 @@ const showWinner = (winner) => {
     msgContainer.classList.remove("hide");
     disableBoxes();
 }
+
+//DRAW
+
+const showDraw = () => {
+    msg.innerText = "It's a Draw!";
+    msgContainer.classList.remove("hide");
+    disableBoxes();
+};
 
 //CHECK WINNER
 
@@ -82,7 +101,14 @@ const checkWinner = () => {
             }
         }
     }
-}
+    if (clickCount === 9) {
+        showDraw();
+    }
+};
+
+//Reset the Game
 
 newgameBtn.addEventListener("click",resetGame);
 resetBtn.addEventListener("click",resetGame);
+
+
