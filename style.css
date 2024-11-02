@@ -147,12 +147,6 @@ footer {
         font-size: 1.25rem;
     }
 
-    .box {
-        height: 15vmin;
-        width: 15vmin;
-        font-size: 6vmin;
-    }
-
     #reset-button, #new-btn {
         font-size: 1rem;
         padding: 0.75rem;
@@ -161,18 +155,16 @@ footer {
     header h1 {
         font-size: 1.5rem;
     }
+
+    #msg {
+        font-size: 4vmin;
+    }
 }
 
 /* Small screens */
 @media (max-width: 480px) {
     #logo {
         font-size: 1rem;
-    }
-
-    .box {
-        height: 12vmin;
-        width: 12vmin;
-        font-size: 5vmin;
     }
 
     #reset-button, #new-btn {
